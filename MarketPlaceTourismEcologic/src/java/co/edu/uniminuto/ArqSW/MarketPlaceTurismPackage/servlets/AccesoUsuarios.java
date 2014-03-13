@@ -149,7 +149,7 @@ public class AccesoUsuarios extends HttpServlet
         if(userAuthenticate.authenticate(user, password))
         {
             msg =  "<h1>USuario Autenticado como Super ADMIN</h1>";
-            msg += "<h2>rol: " + request.getSession().getAttribute("role") + "</h2>"; 
+            msg += "<h2>rol: " + session.getAttribute("role") + "</h2>"; 
         }
         else
         {

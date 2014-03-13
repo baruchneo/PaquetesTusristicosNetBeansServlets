@@ -1,4 +1,4 @@
-/**
+    /**
  * Uniminuto 
  * Arquitectura de Software 
  * Docente: Yamid Ramirez       NRC: 3242
@@ -11,20 +11,19 @@
 
 #Admin{
 background: url(../images/SuperAdminTemplate.png) 0 0 no-repeat; 
-width: 929px;
-height: 754px;
+width: 841px;
+height: 892px;
 z-index: 2;
 position:relative;
-left: 131px; 
-top:33px; 
+left: 34px;
+top: 0px;
 
 }
-
 
 /*#fondo{
 background: url(../images/ClientTemplate.png) 0 0 no-repeat; 
 width: 929px;
-height: 754px;
+height: 882px;
 z-index: 2;
 position:relative;
 left: 40px; 
@@ -103,17 +102,17 @@ height: 326px;
 z-index: 2;
 position: relative;
 left: 117px;
-top: -252px;
+top: -136px;
     
 }
 
 #grid_Conten{
-width: 488px;
-height: 326px;
+width: 751px;
+height: 328px;
 z-index: 2;
 position: relative;
-left: 0px;
-top: 130px;
+left: 33px;
+top: -739px;
     
 }
 
@@ -123,7 +122,7 @@ height: 56px;
 z-index: 2;
 position:relative;
 left: 190px;
-top: 185px;
+top: 307px
 }
 
 
@@ -133,7 +132,7 @@ height: 56px;
 z-index: 2;
 position:relative;
 left: 445px;
-top: 128px;
+top: 252px;
 }
 
 
@@ -143,7 +142,7 @@ height: 56px;
 z-index: 2;
 position:relative;
 left: 718px;
-top: 71px;
+top: 195px;
 }
 
 #grid4{
@@ -152,7 +151,7 @@ height: 56px;
 z-index: 2;
 position:relative;
 left: 3px;
-top: 220px;
+top: 343px;
 }
 
 #grid5{
@@ -161,7 +160,7 @@ height: 56px;
 z-index: 2;
 position:relative;
 left: 121px;
-top: 435px;
+top: 560px;
 }
 #grid6{
 width: 177px;
@@ -169,7 +168,7 @@ height: 56px;
 z-index: 2;
 position:relative;
 left: 307px;
-top: 377px;
+top: 505px;
 }
 #grid7{
 width: 177px;
@@ -177,7 +176,7 @@ height: 56px;
 z-index: 2;
 position:relative;
 left: 473px;
-top: 321px;
+top: 449px;
 }
 #grid8{
 width: 177px;
@@ -185,7 +184,7 @@ height: 56px;
 z-index: 2;
 position:relative;
 left: 652px;
-top: 660px;
+top: 393px;
 }
 #grid9{
 width: 177px;
@@ -196,14 +195,20 @@ left: 652px;
 top: 209px;
 }
 #scroll{
-width: 500px;
-height: 345px;
-overflow-y:scroll;
+width: 786px;
+height: 362px;
+overflow-y: scroll;
+position: relative;
+left: -18px;
+top: -15px;
 }
 #scroll_preba{
 width: 191px;
 height: 142px;
 overflow: scroll;
+position:relative;
+left: 300px;
+top: 0px;
 
 }
 #grid_Admin{
@@ -211,17 +216,17 @@ width: 177px;
 height: 56px;
 z-index: 2;
 position:relative;
-left: 35px;
-top: 178px;
+left: 68px;
+top: -687px;
 }
 
 #grid_Admin_grid7{
 width: 177px;
 height: 56px;
 z-index: 2;
-position:relative;
-left: 597px;
-top: 600px;
+position: relative;
+left: 626px;
+top: -264px;
 }
 
 #contact-form { 
@@ -443,4 +448,73 @@ input:required, textarea:required {
 #failure, #success {
    color: #6EA070;
    display:none; 
+}
+
+#login{
+position:relative;
+left: 34px;
+top: 0px;
+
+}
+#login input {
+position: relative;
+left: 238px;
+top: -839px;
+padding: 7px;
+z-index: 4;
+}
+
+#login a{
+position: relative;
+left: 742px;
+top: -879px;
+padding: 5px;
+    z-index:4;
+}
+
+
+#login2{
+position:relative;
+left: 34px;
+top: 0px;
+
+}
+#login2 input {
+position: relative;
+left: 365px;
+top: 182px;
+padding: 7px;
+z-index: 4;
+}
+
+#login2 a{
+position: relative;
+left: 836px;
+top: 142px;
+padding: 5px;
+    z-index:4;
+}
+
+#login2 input { 
+   background: #fff;
+   -moz-border-radius: 5px; 
+   -webkit-border-radius: 5px; 
+   border-radius: 5px;
+} 
+ 
+#login2 input:focus{ 
+   background-color: #E5E6E7;
+} 
+
+#login2 #submit { 
+   width: 83px;
+   height: 39px;   
+   color: #BFD7C1; 
+   border: none; 
+   background-color: #6EA070;
+} 
+
+#login2 #submit:hover {
+background-color: #BFD7C1;
+color: #6EA070;
 }

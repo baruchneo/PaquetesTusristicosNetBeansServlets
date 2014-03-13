@@ -115,7 +115,7 @@ public class UsersAuthenticate
     public boolean authenticate(String user, String password)
     {
         //athenticate how to Super admin
-        if(user == UsersAuthenticate.ADMINISTRATOR_USER && password == UsersAuthenticate.ADMINISTRATOR_PASSWORD)
+        if(user.trim().equals(UsersAuthenticate.ADMINISTRATOR_USER) && password.trim().equals(UsersAuthenticate.ADMINISTRATOR_PASSWORD))
         {
             session.setAttribute("user", user);
             session.setAttribute("role", role);
