@@ -87,7 +87,7 @@ public class PersonaServlet extends HttpServlet
             out.println("<li><a href=\"viajesEcologicos.jsp\"><span></span></a></li>");
             out.println("</div> ");
             out.println("<div id=\"grid4\">");
-            out.println("<li class=\"current\"><a href=\"ofertas.jsp\"><span></span></a></li>");
+            out.println("<li class=\"current\"><a href=\"clientHome.jsp\"><span></span></a></li>");
             out.println("</div> ");
             out.println("<div id=\"grid5\">");
             out.println("<li><a href=\"comprar.jsp\"><span></span></a></li>");
