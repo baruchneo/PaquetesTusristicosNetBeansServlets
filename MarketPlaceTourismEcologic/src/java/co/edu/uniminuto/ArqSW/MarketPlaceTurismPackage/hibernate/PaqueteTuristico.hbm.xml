@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/03/2014 01:18:28 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.PaqueteTuristico" table="paquete_turistico" catalog="paquetes_turisticos">
+        <id name="idPaqueteTuristico" type="java.lang.Integer">
+            <column name="id_paquete_turistico" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="persona" class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Persona" fetch="select">
+            <column name="id_persona" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="60" not-null="true" />
+        </property>
+        <property name="codigo" type="string">
+            <column name="codigo" length="10" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="2000" not-null="true" />
+        </property>
+        <property name="ubicacion" type="string">
+            <column name="ubicacion" length="25" not-null="true" />
+        </property>
+        <property name="disponibilidad" type="int">
+            <column name="disponibilidad" not-null="true" />
+        </property>
+        <property name="costo" type="double">
+            <column name="costo" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="oferta" type="java.lang.Boolean">
+            <column name="oferta" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="10" />
+        </property>
+        <property name="publicado" type="java.lang.Boolean">
+            <column name="publicado" />
+        </property>
+        <set name="servicios" inverse="true" table="servicios_paquetes">
+            <key>
+                <column name="id_paquete_turistico" not-null="true" />
+            </key>
+            <many-to-many entity-name="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Servicio">
+                <column name="id_servicio" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="registros" inverse="true">
+            <key>
+                <column name="id_paquete_turistico" />
+            </key>
+            <one-to-many class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Registro" />
+        </set>
+        <set name="compraServiciosPaqueteses" inverse="false" table="paquete_compra_serv_paqt">
+            <key>
+                <column name="id_paquete_turistico" not-null="true" />
+            </key>
+            <many-to-many entity-name="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.CompraServiciosPaquetes">
+                <column name="id_compra_serv_paqt" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/03/2014 01:18:28 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Persona" table="persona" catalog="paquetes_turisticos">
+        <id name="idPersona" type="java.lang.Integer">
+            <column name="id_persona" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tipoPersona" class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.TipoPersona" fetch="select">
+            <column name="id_tipo_persona" not-null="true" />
+        </many-to-one>
+        <property name="nombres" type="string">
+            <column name="nombres" length="60" not-null="true" />
+        </property>
+        <property name="appellidos" type="string">
+            <column name="appellidos" length="60" not-null="true" />
+        </property>
+        <property name="numDocumento" type="string">
+            <column name="num_documento" length="20" not-null="true" />
+        </property>
+        <property name="tipoDocumento" type="string">
+            <column name="tipo_documento" length="20" not-null="true" />
+        </property>
+        <property name="usuario" type="string">
+            <column name="usuario" length="16" not-null="true" />
+        </property>
+        <property name="clave" type="string">
+            <column name="clave" length="60" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="60" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="10" not-null="true" />
+        </property>
+        <property name="telefonoMovil" type="string">
+            <column name="telefono_movil" length="18" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="80" not-null="true" />
+        </property>
+        <property name="verificarUsuario" type="java.lang.Boolean">
+            <column name="verificar_usuario" />
+        </property>
+        <property name="fechaNacimiento" type="date">
+            <column name="fecha_nacimiento" length="10" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="20" not-null="true" />
+        </property>
+        <set name="proveedors" inverse="true">
+            <key>
+                <column name="id_persona" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Proveedor" />
+        </set>
+        <set name="paqueteTuristicos" inverse="true">
+            <key>
+                <column name="id_persona" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.PaqueteTuristico" />
+        </set>
+        <set name="servicios" inverse="true">
+            <key>
+                <column name="id_persona" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Servicio" />
+        </set>
+        <set name="mensajeses" inverse="false" table="personas_mensajes">
+            <key>
+                <column name="id_persona" not-null="true" />
+            </key>
+            <many-to-many entity-name="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Mensajes">
+                <column name="id_mensaje" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="compraServiciosPaqueteses" inverse="true">
+            <key>
+                <column name="id_persona" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.CompraServiciosPaquetes" />
+        </set>
+    </class>
+</hibernate-mapping>

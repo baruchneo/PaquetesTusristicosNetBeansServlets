@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/03/2014 01:18:28 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Mensajes" table="mensajes" catalog="paquetes_turisticos">
+        <id name="idMensaje" type="int">
+            <column name="id_mensaje" />
+            <generator class="assigned" />
+        </id>
+        <property name="enunciado" type="string">
+            <column name="enunciado" length="100" not-null="true" />
+        </property>
+        <property name="emailOrigen" type="string">
+            <column name="email_origen" length="80" not-null="true" />
+        </property>
+        <property name="emailDestino" type="string">
+            <column name="email_destino" length="80" not-null="true" />
+        </property>
+        <property name="mensaje" type="string">
+            <column name="mensaje" length="1000" not-null="true" />
+        </property>
+        <property name="tipoMensaje" type="string">
+            <column name="tipo_mensaje" length="15" not-null="true" />
+        </property>
+        <set name="personas" inverse="true" table="personas_mensajes">
+            <key>
+                <column name="id_mensaje" not-null="true" />
+            </key>
+            <many-to-many entity-name="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Persona">
+                <column name="id_persona" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="registros" inverse="true">
+            <key>
+                <column name="id_mensaje" />
+            </key>
+            <one-to-many class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Registro" />
+        </set>
+    </class>
+</hibernate-mapping>

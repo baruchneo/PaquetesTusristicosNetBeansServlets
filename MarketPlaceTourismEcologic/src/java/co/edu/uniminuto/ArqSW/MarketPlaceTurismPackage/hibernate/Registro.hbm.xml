@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/03/2014 01:18:28 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Registro" table="registro" catalog="paquetes_turisticos">
+        <id name="idRegistroLog" type="int">
+            <column name="id_registro_log" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="servicio" class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Servicio" fetch="select">
+            <column name="id_servicio" />
+        </many-to-one>
+        <many-to-one name="tipoRegistro" class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.TipoRegistro" fetch="select">
+            <column name="id_tipo_registro" not-null="true" />
+        </many-to-one>
+        <many-to-one name="paqueteTuristico" class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.PaqueteTuristico" fetch="select">
+            <column name="id_paquete_turistico" />
+        </many-to-one>
+        <many-to-one name="compraServiciosPaquetes" class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.CompraServiciosPaquetes" fetch="select">
+            <column name="id_compra_serv_paqt" />
+        </many-to-one>
+        <many-to-one name="mensajes" class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Mensajes" fetch="select">
+            <column name="id_mensaje" />
+        </many-to-one>
+        <property name="titulo" type="string">
+            <column name="titulo" length="60" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="400" not-null="true" />
+        </property>
+        <property name="fechaRegistro" type="date">
+            <column name="fecha_registro" length="10" not-null="true" />
+        </property>
+        <property name="idPersona" type="int">
+            <column name="id_persona" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/03/2014 01:18:28 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Proveedor" table="proveedor" catalog="paquetes_turisticos">
+        <id name="idProveedor" type="int">
+            <column name="id_proveedor" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="persona" class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Persona" fetch="select">
+            <column name="id_persona" not-null="true" />
+        </many-to-one>
+        <property name="razonSocial" type="string">
+            <column name="razon_social" length="60" not-null="true" />
+        </property>
+        <property name="codigo" type="string">
+            <column name="codigo" length="20" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="60" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="20" not-null="true" />
+        </property>
+        <property name="paginaWeb" type="string">
+            <column name="pagina_web" length="60" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="80" not-null="true" />
+        </property>
+        <property name="confirmarProveedor" type="boolean">
+            <column name="confirmar_proveedor" not-null="true" />
+        </property>
+        <set name="compraServiciosPaqueteses" inverse="true">
+            <key>
+                <column name="id_proveedor" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.CompraServiciosPaquetes" />
+        </set>
+    </class>
+</hibernate-mapping>

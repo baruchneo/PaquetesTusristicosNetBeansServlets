@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://192.168.1.104:3306/paquetes_turisticos</property>
+    <property name="hibernate.connection.username">uniminuto2</property>
+    <property name="hibernate.connection.password">12345678</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
+    <mapping resource="co/edu/uniminuto/ArqSW/MarketPlaceTurismPackage/hibernate/Registro.hbm.xml"/>
+    <mapping resource="co/edu/uniminuto/ArqSW/MarketPlaceTurismPackage/hibernate/TipoServicio.hbm.xml"/>
+    <mapping resource="co/edu/uniminuto/ArqSW/MarketPlaceTurismPackage/hibernate/TipoRegistro.hbm.xml"/>
+    <mapping resource="co/edu/uniminuto/ArqSW/MarketPlaceTurismPackage/hibernate/Servicio.hbm.xml"/>
+    <mapping resource="co/edu/uniminuto/ArqSW/MarketPlaceTurismPackage/hibernate/Mensajes.hbm.xml"/>
+    <mapping resource="co/edu/uniminuto/ArqSW/MarketPlaceTurismPackage/hibernate/Persona.hbm.xml"/>
+    <mapping resource="co/edu/uniminuto/ArqSW/MarketPlaceTurismPackage/hibernate/PaqueteTuristico.hbm.xml"/>
+    <mapping resource="co/edu/uniminuto/ArqSW/MarketPlaceTurismPackage/hibernate/Proveedor.hbm.xml"/>
+    <mapping resource="co/edu/uniminuto/ArqSW/MarketPlaceTurismPackage/hibernate/TipoPersona.hbm.xml"/>
+    <mapping resource="co/edu/uniminuto/ArqSW/MarketPlaceTurismPackage/hibernate/CompraServiciosPaquetes.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
