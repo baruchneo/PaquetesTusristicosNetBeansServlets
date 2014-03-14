@@ -28,15 +28,15 @@
                 <input type="text" id="user" name="user" value="" placeholder="Usuario" />   
                 <input type="text" id="pass" name="pass" value="" placeholder="Contraseña" /> 
                 <input type="submit" value="Entrar" id="submit" />  
-                <input href="a" value="Registrar" id="submit" />  
+                <input type="submit" value="Registrar" id="submit" />  
                 <br> <a href="">Olvide mi<br> Contraseña</a>
             </form > 
         </div>
         <ol id="toc">
-            <div class="current" id="gridSuperAdminHome" >
+            <div id="gridSuperAdminHome" >
                 <li><a href="superAdminHome.jsp"><span></span></a></li>
             </div>
-            <div id="gridSuperAdminProvider" >
+            <div class="current"  id="gridSuperAdminProvider" >
                 <li><a href="superAdminProviders.jsp"><span></span></a></li>
             </div>
             <div id="gridSuperAdminServices" >
@@ -52,7 +52,7 @@
         <div class="content" id="grid_Conten" style="margin-left: 30px;">
             <div id="scroll">
             
-                <h2>Ingreso Usuarios  Home</h2>
+                <h2>Ingreso Usuarios  Proveedores</h2>
                 <p>
                     <form action="AccesoUsuarios" method="post">
                         <table>

@@ -10,7 +10,7 @@
  */
 
 #Admin{
-background: url(../images/SuperAdminTemplate.png) 0 0 no-repeat; 
+background: url(../images/AdministatorTemplate.png) 0 0 no-repeat; 
 width: 841px;
 height: 892px;
 z-index: 2;
@@ -19,6 +19,16 @@ left: 34px;
 top: 0px;
 
 }
+
+/*#fondo{
+background: url(../images/ClientTemplate.png) 0 0 no-repeat; 
+width: 929px;
+height: 882px;
+z-index: 2;
+position:relative;
+left: 40px; 
+top:33px; 
+}*/
 
 body {
   background: url(../images/background.jpg) 0 0 repeat; 
@@ -96,6 +106,15 @@ top: -136px;
     
 }
 
+#grid_Conten{
+width: 751px;
+height: 328px;
+z-index: 2;
+position: relative;
+left: 33px;
+top: -961px;    
+}
+
 #scroll{
 width: 786px;
 height: 362px;
@@ -104,7 +123,6 @@ position: relative;
 left: -18px;
 top: -15px;
 }
-
 #scroll_preba{
 width: 191px;
 height: 142px;
@@ -112,18 +130,10 @@ overflow: scroll;
 position:relative;
 left: 300px;
 top: 0px;
+
 }
 
-#grid_Conten{
-width: 751px;
-height: 328px;
-z-index: 2;
-position: relative;
-left: 33px;
-top: -904px;
-}
-
-#gridSuperAdminHome{
+#gridAdminProvider{
 width: 177px;
 height: 56px;
 z-index: 2;
@@ -132,16 +142,16 @@ left: 68px;
 top: -687px;
 }
 
-#gridSuperAdminProvider{
+#gridAdminService{
 width: 177px;
 height: 56px;
 z-index: 2;
 position:relative;
-left: 265px;
+left: 264px;
 top: -742px;
 }
 
-#gridSuperAdminServices{
+#gridAdminPackage{
 width: 177px;
 height: 56px;
 z-index: 2;
@@ -150,24 +160,32 @@ left: 464px;
 top: -798px;
 }
 
-#gridSuperAdminMessages{
+#gridAdminClient{
 width: 177px;
 height: 56px;
 z-index: 2;
 position:relative;
-left: 663px;
+left: 664px;
 top: -854px;
 }
 
-#gridSuperAdminHistory{
+#gridAdminHistory{
 width: 177px;
 height: 56px;
 z-index: 2;
 position: relative;
 left: 626px;
-top: -429px;
+top: -430px;
 }
 
+#gridAdminQuest{
+width: 177px;
+height: 56px;
+z-index: 2;
+position: relative;
+left: 426px;
+top: -486px;
+}
 
 #login{
 position:relative;
