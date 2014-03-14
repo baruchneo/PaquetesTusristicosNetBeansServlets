@@ -69,6 +69,7 @@ public class AccesoUsuarios extends HttpServlet
             out.println("<head>");
             out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
             out.println("<link rel=\"stylesheet\" href=\"style/ClientStyle.css\">");
+            
             out.println("<title>Marketplace Turismo Ecológico</title>");
             out.println("</head>");
             out.println("<body>");
@@ -142,7 +143,7 @@ public class AccesoUsuarios extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
     {
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(true);
         String user = request.getParameter("usuario");
         String password = request.getParameter("password");
         UsersAuthenticate userAuthenticate = new UsersAuthenticate(session);

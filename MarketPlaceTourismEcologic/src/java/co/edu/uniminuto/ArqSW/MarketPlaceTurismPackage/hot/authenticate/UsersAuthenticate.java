@@ -6,6 +6,7 @@
 package co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hot.authenticate;
 
 import co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.DAO.LogginUsers;
+import co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hibernate.Persona;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -133,7 +134,8 @@ public class UsersAuthenticate
         else
         {
             LogginUsers logginUsers = new LogginUsers();
-            if(logginUsers != null)
+            Persona usuario = logginUsers.getUsers(user, password);
+            if(usuario != null)
             {
                 return true;
             }

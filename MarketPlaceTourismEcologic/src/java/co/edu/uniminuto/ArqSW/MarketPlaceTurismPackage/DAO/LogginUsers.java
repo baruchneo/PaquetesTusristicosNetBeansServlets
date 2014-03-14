@@ -86,7 +86,7 @@ public class LogginUsers {
      *
      * @return List <Mensajes>
      */
-    public Persona getMensajes(String user, String password) {
+    public Persona getUsers(String user, String password) {
         Persona persona = new Persona();
         try {
             transaction = session.beginTransaction();
