@@ -5,6 +5,7 @@
 
 package co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.hot.authenticate;
 
+import co.edu.uniminuto.ArqSW.MarketPlaceTurismPackage.DAO.LogginUsers;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -51,6 +52,8 @@ public class UsersAuthenticate
     
     private HttpSession session;
     
+    private String messageresult; 
+    
     //-----------------------------------------------------------------------//
     //                              Class Attributes                         //
     //-----------------------------------------------------------------------//
@@ -80,7 +83,7 @@ public class UsersAuthenticate
         this.role = null;
         this.session = session;
     }
-    
+
     //-----------------------------------------------------------------------//
     //                              Class Getters                            //
     //-----------------------------------------------------------------------//
@@ -105,10 +108,15 @@ public class UsersAuthenticate
         return session;
     }
     
+    public String getMessageresult() 
+    {
+        return messageresult;
+    }
+    
     //-----------------------------------------------------------------------//
     //                              Class Setters                            //
     //-----------------------------------------------------------------------//
-
+        
     //-----------------------------------------------------------------------//
     //                              Business Methods                         //
     //-----------------------------------------------------------------------//
@@ -119,11 +127,21 @@ public class UsersAuthenticate
         {
             session.setAttribute("user", user);
             session.setAttribute("role", role);
+            //this.messageresult = ""
             return true;
         }
         else
         {
-            return false;
+            LogginUsers logginUsers = new LogginUsers();
+            if(logginUsers != null)
+            {
+                return true;
+            }
+            else
+            {
+                this.messageresult = "Usuario no registrado, verifique sus credenciales de acceso";
+                return false;
+            }
         }
     }
     //-----------------------------------------------------------------------//
