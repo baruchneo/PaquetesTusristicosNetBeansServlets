@@ -24,8 +24,8 @@
             <form method="post" action="" > 
                 <input type="text" id="user" name="user" value="" placeholder="Usuario" size="11" style="margin-right: 56px;" />   
                 <input type="text" id="pass" name="pass" value="" placeholder="Contraseña" size="11" /> 
-                <input type="submit" value="Ingresar" id="submit" />
-                <input type="submit" value="Registrar" id="submit" />
+                <input type="button" value="Ingresar" id="submit" />
+                <input type="button" value="Registrar" id="submit" onClick="window.location.href='registrarUser.jsp'"/>
                 <br> <a href="">Olvide mi<br> Contraseña</a>
             </form > 
         </div>  
